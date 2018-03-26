@@ -1,0 +1,301 @@
+\ProvidesPackage{header}
+
+%%% MODIFY THIS INFORMATION AS NECESSARY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\coursenumber{Stat 140}
+\def\class{Probability for Data Science}
+\def\semester{Spring 2018}
+\def\instructor{Ani Adhikari}
+\def\homeworknumber{1}
+\def\name{Peter Lee}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Packages Needed %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}  % extended mathematics
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{booktabs} % for much better looking tables
+\usepackage{circuitikz}
+\usepackage{color}
+\usepackage{comment}
+\usepackage{enumerate}
+\usepackage{epsf}
+\usepackage{fancyhdr}
+\usepackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim
+                              % environments
+\usepackage{float}
+\usepackage{graphicx} % allow embedded images
+\usepackage{hyperref}
+\usepackage{import}
+\usepackage{latexsym}
+\usepackage{lipsum}   % filler text
+\usepackage{listings}
+\usepackage{mathptmx}
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{textcomp}
+\usepackage{textcomp}
+\usepackage{tikz}
+\usepackage{times}
+\usepackage{url}
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usetikzlibrary{arrows}
+\usetikzlibrary{automata}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newskip\saveskip
+\newskip\saveindent
+\saveskip=\baselineskip
+
+\def\tab{\hbox{\kern10pt}}
+
+\newcommand{\define}[1]{\emph{#1}}
+
+\textheight=9in
+\textwidth=6.5in
+\addtolength{\voffset}{-1in}
+\oddsidemargin=0.25in
+\evensidemargin=-0.25in
+\parindent=0pt
+\parskip=5pt
+\itemsep=-1pt
+\floatsep 9pt plus 2pt minus 3pt
+\intextsep 9pt plus 2pt minus 3pt
+\textfloatsep=9pt plus 2pt minus 3pt
+\renewcommand{\baselinestretch}{1.0}
+\font\dunhd=cmdunh10 scaled \magstep5
+\font\dunhc=cmdunh10 scaled \magstep4
+\font\dunhbb=cmdunh10 scaled \magstep4
+\font\dunhb=cmdunh10 scaled \magstep2
+\font\dunha=cmdunh10 scaled \magstep2
+\date{}
+
+%%% Header %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\makeheader}{
+	\renewcommand{\headrulewidth}{3pt}
+	\lhead{ \Large  \fontfamily{lmdh}\selectfont
+		\instructor \\ \vspace*{3pt}
+		\semester}
+	\chead{\Large \fontfamily{Imdh}\selectfont
+		\headrule \vspace*{12pt} 
+		\coursenumber\\ \vspace{3pt}
+		\class}
+	\rhead{\Large 	\fontfamily{lmdh}\selectfont
+		\name \\ \vspace*{3pt}
+		Homework \homeworknumber}
+	\headheight=40pt
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%% Figures %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\fig#1{\centerline{\epsffile{#1}}}
+\def\twofig#1#2{%
+\noindent\epsfxsize=0.48\textwidth
+\noindent \epsffile{#1}\hfill
+\epsfxsize=0.48\textwidth
+\epsffile{#2}\\
+\makebox[0.48\textwidth]{(a)}\hfill\makebox[0.48\textwidth]{(b)}%
+}
+
+\newcommand{\chapref}[1]{Chapter~\ref{#1}}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+\newcommand{\exref}[1]{Exercise~\ref{#1}}
+\newcommand{\partref}[1]{Part~\ref{#1}}
+\newcommand{\appref}[1]{Appendix~\ref{#1}}
+\newcommand{\sideref}[1]{the sidebar titled #1}
+\newcommand{\pgref}[1]{page~\pageref{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%% Questions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Question}[2][]{\section{{\Large \dunhb #2} {\normalsize #1}}}
+\newcommand{\Appendix}[1]{\section*{\Large \dunhb #1}}
+\newenvironment{Parts}{\begin{enumerate}[(a)]\newcommand\Part{\item}}{\end{enumerate}}
+
+% Standardize command font styles and environments
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{graphics/}} % set of paths to search for images
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name --
+                                % adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle
+  }\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command
+                                % argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command
+                                % argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command
+                                % specification environment\rangle}}
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with
+                            % XeLaTeX)
+
+% Homework Question Env.
+\theoremstyle{remark}
+\newtheorem{problem}{\vspace{5pt}\\\Large\textsc{Problem}}
+
+\providecommand\newthought[1]{%
+   \addvspace{1.0\baselineskip plus 0.5ex minus 0.2ex}%
+   \noindent\textsc{#1} % small caps text out
+}
+
+% code formatting
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Octave,                 % the language of the code
+  morekeywords={*,...},           % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%% Math %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\long\def\comment#1{}
+% Probability
+\DeclareMathOperator{\var}{var}
+
+% Some vector/matrix norms
+\newcommand{\matnorm}[3]{|\!|\!| #1 | \! | \!|_{{#2}, {#3}}}
+\newcommand{\matsnorm}[2]{|\!|\!| #1 | \! | \!|_{{#2}}}
+\newcommand{\vecnorm}[2]{\| #1\|_{#2}}
+
+%Hamming metric
+\newcommand{\dH}{\mathsf{d}_{\mathsf{H}} }
+
+\newcommand{\two}{\mathsf{two}}
+
+\newcommand{\nucnorm}[1]{\ensuremath{\matsnorm{#1}{\footnotesize{\mbox{nuc}}}}}
+\newcommand{\fronorm}[1]{\ensuremath{\matsnorm{#1}{\footnotesize{\mbox{fro}}}}}
+\newcommand{\opnorm}[1]{\ensuremath{\matsnorm{#1}{\tiny{\mbox{op}}}}}
+
+
+% Inner product
+\newcommand{\inprod}[2]{\ensuremath{\langle #1 , \, #2 \rangle}}
+
+% Kullback-Leibler
+\newcommand{\kull}[2]{\ensuremath{D(#1\; \| \; #2)}}
+
+% Probability
+\newcommand{\Exs}{\ensuremath{{\mathbb{E}}}}
+\newcommand{\Prob}{\ensuremath{{\mathbb{P}}}}
+
+% Observations, dimension etc.
+\newcommand{\numobs}{\ensuremath{n}}
+\newcommand{\usedim}{\ensuremath{d}}
+
+%Numbering
+\newcommand{\1}{\ensuremath{{\sf (i)}}}
+\newcommand{\2}{\ensuremath{{\sf (ii)}}}
+\newcommand{\3}{\ensuremath{{\sf (iii)}}}
+\newcommand{\4}{\ensuremath{{\sf (iv)}}}
+\newcommand{\5}{\ensuremath{{\sf (v)}}}
+%Eigenvector / eigenvalue related notation
+\newcommand{\eig}[1]{\ensuremath{\lambda_{#1}}}
+\newcommand{\eigmax}{\ensuremath{\eig{\max}}}
+\newcommand{\eigmin}{\ensuremath{\eig{\min}}}
+
+
+%
+\newcommand{\NORMAL}{\ensuremath{\mathcal{N}}}
+\newcommand{\BER}{\ensuremath{\mbox{Ber}}}
+
+\newcommand{\Xspace}{\ensuremath{\mathcal{X}}}
+\newcommand{\Yspace}{\ensuremath{\mathcal{Y}}}
+\newcommand{\Zspace}{\ensuremath{\mathcal{Z}}}
+\newcommand{\Espace}{\ensuremath{\mathcal{E}}}
+
+% Basic statistics notation
+% True parameter
+\newcommand{\thetastar}{\ensuremath{\theta^*}}
+% Estimate one
+\newcommand{\thetahat}{\ensuremath{\widehat{\theta}}}
+
+\newcommand{\xhat}{\ensuremath{\widehat{x}}}
+\newcommand{\Xhat}{\ensuremath{\widehat{X}}}
+\newcommand{\Yhat}{\ensuremath{\widehat{Y}}}
+\newcommand{\xhatml}{\ensuremath{\widehat{x}_{{\sf ML}}}}
+\newcommand{\Xhatml}{\ensuremath{\widehat{X}_{{\sf ML}}}}
+% Estimate two
+\newcommand{\thetatil}{\ensuremath{\widetilde{\theta}}}
+
+\newcommand{\gt}{\ensuremath{\widetilde{g}}}
+
+\newcommand{\yvec}{\ensuremath{y}}
+\newcommand{\Xmat}{\ensuremath{X}}
+
+\newcommand{\widgraph}[2]{\includegraphics[keepaspectratio,width=#1]{#2}}
+
+
+%Problem-specific notation
+\newcommand{\Ind}{\ensuremath{\mathbb{I}}}
+\newcommand{\real}{\ensuremath{\mathbb{R}}}
+
+\newcommand{\Pihat}{\ensuremath{\widehat{\Pi}}}
+\newcommand{\Pihatml}{\ensuremath{\widehat{\Pi}_{{\sf ML}}}}
+\newcommand{\Pitil}{\ensuremath{\widetilde{\Pi}}}
+
+\newcommand{\Projpi}{\ensuremath{P_{\Pi}}}
+\newcommand{\Projorthpi}{\ensuremath{P_{\Pi}^{\perp}}}
+\newcommand{\Projorthpistar}{\ensuremath{P_{\Pi^*}^{\perp}}}
+
+\newcommand{\hballpi}{\ensuremath{\mathbb{B}^{\sf H}_\Pi}}
+\newcommand{\hballpistar}{\ensuremath{\mathbb{B}_{\sf H}}}
+%\newcommand{\hballpistar}{\ensuremath{\mathcal{P}_n}}
+\newcommand{\SNR}{\ensuremath{\frac{\|x^*\|_2^2}{\sigma^2}}}
+\newcommand{\snr}{\ensuremath{{\sf snr}}}
+\newcommand{\Pn}{\ensuremath{\mathcal{P}_n}}
+
+\newcommand{\EE}{\ensuremath{\mathbb{E}}}
+%changed to probability of error
+\newcommand{\Rpihat}{\ensuremath{\Pr\{ \Pihat \neq \Pi^* \} }}
+
+\newcommand{\Rpihatml}{\ensuremath{\Pr\{ \Pihatml \neq \Pi^* \}}}
+\newcommand{\BigO}{\ensuremath{\mathcal{O}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%% Student Solution %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{solution}{
+\begin{mdframed}\textbf{Solution}\\}{\end{mdframed}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Shapes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+\node[shape=circle,draw,inner sep=1](char) {#1};}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,18 @@
+\Question{hi}
+\begin{tikzpicture}[xscale=4,yscale=4,->,>=stealth',shorten >=1pt]
+\tikzset{every path/.style={->,>=triangle 45}};
+\node[draw,circle] (A) at (0,1) {$A$};
+\node[draw,circle] (B) at (0.5,1.5) {$B$};
+\node[draw,circle] (C) at (1,1) {$C$};
+\node[draw,circle] (D) at (2, 1) {$D$};
+
+\draw (A) node[below=0.3cm] {$h(A)=0$};
+\draw (B) node[above=0.3cm] {$h(B)=6$};
+\draw (C) node[below=0.3cm] {$h(C)=3$};
+\draw (D) node[below=0.3cm] {$h(D)=0$};
+
+\path [->] (A) edge node[left=0.25cm,above=-0.15cm] {$1$} (B);
+\path [->] (B) edge node[right=0.25cm,above=-0.15cm] {$1$} (C);
+\path [->] (A) edge node[below=0.1cm] {$3$} (C);
+\path [->] (C) edge node[above=0.1cm] {$5$} (D);
+\end{tikzpicture}
