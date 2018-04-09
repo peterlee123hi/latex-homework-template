@@ -80,8 +80,8 @@
 \date{}
 
 %%% Header %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\makeheader}{
-	\renewcommand{\headrulewidth}{3pt}
+\renewcommand{\headrulewidth}{3pt}
+\fancypagestyle{firstpage}{
 	\lhead{ \Large  \fontfamily{lmdh}\selectfont
 		\instructor \\ \vspace*{3pt}
 		\semester}
@@ -92,8 +92,9 @@
 	\rhead{\Large 	\fontfamily{lmdh}\selectfont
 		\name \\ \vspace*{3pt}
 		Homework \homeworknumber}
-	\headheight=40pt
+	\setlength{\headheight}{70pt}
 }
+\cfoot{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%% Figures %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
